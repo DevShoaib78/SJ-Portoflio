@@ -47,13 +47,13 @@ const Hero = () => {
       />
       <FloatingElements count={3} />
       
-      {/* Background logos */}
-      <div className="hero-bg-logos">
+      {/* Background logos (decorative) */}
+      <div className="hero-bg-logos" aria-hidden="true">
         <div className="hero-bg-logo hh-logo">
-          <img src="/hhlogo.png" alt="" loading="lazy" decoding="async" />
+          <img src="/hhlogo.webp" alt="" width="240" height="240" loading="lazy" decoding="async" />
         </div>
         <div className="hero-bg-logo evp-logo">
-          <img src="/evplogo.png" alt="" loading="lazy" decoding="async" />
+          <img src="/evplogo.webp" alt="" width="240" height="240" loading="lazy" decoding="async" />
         </div>
       </div>
       
@@ -67,10 +67,13 @@ const Hero = () => {
         >
           <motion.div className="hero-image" variants={itemVariants}>
             <div className="hero-photo">
-              <img 
-                src="/sayeeda.jpg" 
-                alt="Sayeeda Jabri" 
+              <img
+                src="/sayeeda.webp"
+                alt="Portrait of Sayeeda Jabri, Co-founder of Hyderabad Hustlers"
+                width="480"
+                height="480"
                 loading="eager"
+                fetchpriority="high"
                 decoding="async"
               />
             </div>

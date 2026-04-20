@@ -73,14 +73,7 @@
   }
 }
 
-.section-line {
-  width: 80px;
-  height: 3px;
-  background: var(--gradient-gold);
-  margin: 0 auto;
-  border-radius: 2px;
-  transform-origin: center;
-}
+/* .section-line is defined globally in src/index.css */
 
 .about-main {
   display: flex;
@@ -107,8 +100,7 @@
 
 .word {
   display: inline;
-  will-change: transform, opacity;
-  transition: all 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .about-intro {

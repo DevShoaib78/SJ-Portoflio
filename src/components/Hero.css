@@ -235,9 +235,7 @@
   border: 2px solid #febd59;
   border-radius: 50px;
   padding: 12px 24px;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  box-shadow: 
+  box-shadow:
     0 10px 35px rgba(0, 0, 0, 0.2),
     0 0 0 1px rgba(254, 189, 89, 0.1) inset;
   transition: all 0.4s ease;
@@ -404,8 +402,6 @@
   border: 2px solid #febd59;
   border-radius: 50px;
   box-shadow: 0 10px 35px rgba(0,0,0,0.2), 0 0 0 1px rgba(254,189,89,0.1) inset;
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   padding: 12px 28px;
   min-width: 180px;
   transition: all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);

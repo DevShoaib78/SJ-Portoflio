@@ -6,3 +6,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+
+# Local / editor settings
+.claude/settings.local.json
+
+# Local scratch folder (screenshots, notes, etc.)
+Random Folder/
+

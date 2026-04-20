@@ -1,10 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import useIsMobile from '../hooks/useIsMobile';
+import TimelineIcon from './TimelineIcon';
 import './Experience.css';
 
 const FlowingParticles = () => {
-  // Generate particles with upward flow - OPTIMIZED COUNT
+  const isMobile = useIsMobile();
+  if (isMobile) return null;
   const particles = Array.from({ length: 40 }, (_, i) => ({
     id: i,
     size: Math.random() * 4 + 1, // 1px to 5px
@@ -38,8 +41,8 @@ const FlowingParticles = () => {
 
 const TimelineItem = ({ experience, index }) => {
   const [ref, inView] = useInView({
-    threshold: 0.3,
-    triggerOnce: true // Stays visible once revealed
+    threshold: 0.25,
+    triggerOnce: false // Reveal on enter, un-reveal on exit (scroll up)
   });
 
   const itemVariants = {
@@ -101,7 +104,9 @@ const TimelineItem = ({ experience, index }) => {
         animate={inView ? "visible" : "hidden"}
       >
         <div className="dot-inner">
-          <span className="dot-icon">{experience.icon}</span>
+          <span className="dot-icon">
+            <TimelineIcon name={experience.icon} />
+          </span>
         </div>
         {experience.priority && <div className="priority-ring"></div>}
       </motion.div>
@@ -115,12 +120,12 @@ const TimelineItem = ({ experience, index }) => {
         {/* Company Logo for specific cards */}
         {experience.title === "Co-founder & COO" && experience.organization === "Hyderabad Hustlers" && (
           <div className="card-logo">
-            <img src="/hhlogo.png" alt="Hyderabad Hustlers" loading="lazy" decoding="async" />
+            <img src="/hhlogo.webp" alt="Hyderabad Hustlers logo" width="96" height="96" loading="lazy" decoding="async" />
           </div>
         )}
         {experience.title === "Incubation Manager Fellow" && experience.organization === "EdVenture Park" && (
           <div className="card-logo">
-            <img src="/evplogo.png" alt="EdVenture Park" loading="lazy" decoding="async" />
+            <img src="/evplogo.webp" alt="EdVenture Park logo" width="96" height="96" loading="lazy" decoding="async" />
           </div>
         )}
         
@@ -133,13 +138,14 @@ const TimelineItem = ({ experience, index }) => {
         
         <p className="card-description">{experience.description}</p>
         
-        <div className="highlights">
+        <ul className="highlights">
           {experience.highlights.map((highlight, idx) => (
-            <div key={idx} className="highlight-badge">
-              {highlight}
-            </div>
+            <li key={idx} className="highlight-item">
+              <span className="highlight-marker" aria-hidden="true" />
+              <span className="highlight-text">{highlight}</span>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </motion.div>
   );
@@ -152,8 +158,8 @@ const Experience = () => {
   });
 
   const [timelineRef, timelineInView] = useInView({
-    threshold: 0.1,
-    triggerOnce: true
+    threshold: 0.05,
+    triggerOnce: false
   });
 
   // Core Experiences (ordered as per client)
@@ -163,7 +169,7 @@ const Experience = () => {
       organization: "Hyderabad Hustlers",
       description: "Co-founded and built a platform where underrated voices and hustlers of Hyderabad get amplified. I am trying to build a thriving entrepreneurial community by connecting startups, mentors, investors and by reaching out to the potential events/activities which aligns with our vision across the city.",
       highlights: ["Podcast hosting & management", "On-field operations", "Content creation & strategy"],
-      icon: "🚀",
+      icon: "rocket",
       featured: true,
       priority: true
     },
@@ -172,7 +178,7 @@ const Experience = () => {
       organization: "EdVenture Park",
       description: "Contributing to pre-incubation programs and providing strategic guidance to early-stage startups. Executing pre-incubation operations, mentoring founders, and facilitating their journey from ideation to execution.",
       highlights: ["Guided several starting founders", "Involved in pre-incubation program operations", "Facilitated startup acceleration processes"],
-      icon: "🎓",
+      icon: "graduation",
       featured: true,
       priority: true
     },
@@ -181,14 +187,14 @@ const Experience = () => {
       organization: "EdVenture Park",
       description: "An Executive team member at EdVenture Park Incubation Center, driving powerful strategic moves and bringing different teams together to turn big ideas into real results.",
       highlights: ["Strategic planning & execution", "Cross-team leadership", "High-impact initiative implementation"],
-      icon: "⚡"
+      icon: "bolt"
     },
     {
       title: "Law student",
       organization: "Currently Pursuing",
       description: "Studying law to combine legal expertise with entrepreneurial knowledge.",
       highlights: ["Legal research", "Business law focus", "Academic achievement"],
-      icon: "⚖️"
+      icon: "scales"
     }
   ];
 
@@ -199,46 +205,46 @@ const Experience = () => {
       organization: "EdVenture Park",
       description: "Organizing and hosting educational, trending and controversial talks, bringing experts to share their insights with attendees. I believe changing conversations brings a huge impact in the long run.",
       highlights: ["Hosted multiple panel discussions", "Facilitated conversational flows", "Curated thought-provoking sessions"],
-      icon: "💬"
+      icon: "chat"
     },
     {
       title: "Founders' Friday Lead",
       organization: "EdVenture Park",
       description: "As a Founders' Friday Lead, contributed to organizing multiple Founders' Fridays events, overseeing operations and arrangements while actively networking and building meaningful connections within the entrepreneurial community.",
       highlights: ["Event operations management", "Founder community networking", "Strategic event planning"],
-      icon: "🤝"
+      icon: "users"
     },
     {
       title: "Founders' Fest Lead",
       organization: "EdVenture Park",
       description: "Led the planning and execution of Founders' Fest, a flagship event celebrating entrepreneurship and innovation. Coordinated with teams, managed logistics, and ensured a memorable experience for all participants.",
       highlights: ["Flagship event leadership", "Team coordination", "Event logistics & execution"],
-      icon: "🎉"
+      icon: "star"
     },
     {
       title: "CLX",
-      organization: "CLX",
+      organization: "EdVenture Park",
       description: "As a Campus Lead Executive (CLX), primarily focused on identifying and onboarding Campus Leads at EdVenture Park, conducting interviews, providing comprehensive assistance with their activities, and continuously engaging in R&D to enhance and upscale Campus Lead operations.",
       highlights: ["Campus Lead onboarding", "Interview coordination", "R&D for CL's Excellence"],
-      icon: "🔹"
+      icon: "diamond"
     },
     {
       title: "Campus Lead",
       organization: "EdVenture Park",
       description: "Led campus-wide entrepreneurship initiatives and student engagement programs between EdVenture Park and Sultan Uloom College.",
       highlights: ["Student leadership", "Event coordination", "Academic excellence"],
-      icon: "🏫"
+      icon: "school"
     }
   ];
 
   const timelineVariants = {
-    hidden: { scaleY: 0 },
+    hidden: {
+      scaleY: 0,
+      transition: { duration: 0.5, ease: "easeIn" }
+    },
     visible: {
       scaleY: 1,
-      transition: {
-        duration: 1.5,
-        ease: "easeOut"
-      }
+      transition: { duration: 1.2, ease: "easeOut" }
     }
   };
 
@@ -257,6 +263,7 @@ const Experience = () => {
           <h2 className="section-title">
             My <span className="title-accent">Journey</span>
           </h2>
+          <div className="section-line"></div>
           <p className="section-subtitle">Building communities, empowering entrepreneurs, and creating impact</p>
         </motion.div>
         {/* Main Timeline */}
@@ -286,6 +293,7 @@ const Experience = () => {
             <h2 className="section-title" style={{ fontSize: '2.2rem' }}>
               Beyond the <span className="title-accent">Core</span>
             </h2>
+            <div className="section-line"></div>
           </div>
           <div className="timeline-container">
             {/* Vertical Timeline Line for Beyond the Core */}

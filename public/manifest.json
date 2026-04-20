@@ -1,15 +1,20 @@
 {
   "short_name": "Sayeeda Jabri",
-  "name": "Sayeeda Jabri",
+  "name": "Sayeeda Jabri — Portfolio",
+  "description": "Co-founder of Hyderabad Hustlers and IMF Fellow at EdVenture Park. Spotlighting Hyderabad's entrepreneurs through podcasts and community.",
   "icons": [
     {
-      "src": "sjfavicon.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "sjfavicon.webp",
+      "sizes": "192x192 512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait",
   "theme_color": "#000000",
-  "background_color": "#000000"
-} 
+  "background_color": "#000000",
+  "lang": "en"
+}

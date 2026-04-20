@@ -74,6 +74,29 @@
   animation: floatMedia 6s ease-in-out infinite;
   z-index: 2;
   pointer-events: none;
+  /* Static gold glow — painted once, then the existing opacity keyframes
+     make it "breathe" naturally. No per-frame paint cost. */
+  box-shadow:
+    0 0 18px rgba(254, 189, 89, 0.35),
+    0 0 40px rgba(254, 189, 89, 0.15);
+}
+
+/* Red-tinted dots (record lights) get a red glow instead of gold */
+.media .floating-element:nth-child(13),
+.media .floating-element:nth-child(14),
+.media .floating-element:nth-child(15),
+.media .floating-element:nth-child(16),
+.media .floating-element:nth-child(17),
+.media .floating-element:nth-child(18),
+.media .floating-element:nth-child(19),
+.media .floating-element:nth-child(20),
+.media .floating-element:nth-child(21),
+.media .floating-element:nth-child(22),
+.media .floating-element:nth-child(23),
+.media .floating-element:nth-child(24) {
+  box-shadow:
+    0 0 14px rgba(255, 70, 70, 0.4),
+    0 0 32px rgba(255, 70, 70, 0.18);
 }
 
 .media .floating-element:nth-child(1) {
@@ -894,14 +917,14 @@
 }
 
 .instagram-image {
-  width: auto;
-  height: 450px;
+  display: block;
+  width: 100%;
+  height: auto;
   max-width: 750px;
   border-radius: 25px;
-  object-fit: contain;
   transition: all 0.3s ease;
   border: 4px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 
+  box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.4),
     0 0 0 1px rgba(225, 48, 108, 0.1);
 }
@@ -1133,7 +1156,6 @@
   }
 
   .instagram-image {
-    height: 380px;
     max-width: 650px;
   }
 
@@ -1225,7 +1247,6 @@
   }
   
   .instagram-image {
-    height: 300px;
     max-width: 500px;
   }
   
@@ -1340,7 +1361,6 @@
   }
 
   .instagram-image {
-    height: 250px;
     max-width: 400px;
   }
 
@@ -1424,7 +1444,6 @@
   }
 
   .instagram-image {
-    height: 220px;
     max-width: 350px;
   }
 

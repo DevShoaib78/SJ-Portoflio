@@ -36,14 +36,12 @@ const ParticleBackground = ({
       let adjustedSpeed = speed;
       let adjustedOpacity = opacity;
       let enableGlow = true;
-      let enableInteractive = interactive;
       if (isMobile) {
         adjustedCount = Math.max(6, Math.ceil(particleCount * 0.25));
         adjustedSize = size * 1.5;
         adjustedSpeed = speed * 0.5;
         adjustedOpacity = Math.min(0.18, opacity);
         enableGlow = false;
-        enableInteractive = false;
       }
       particlesRef.current = [];
       for (let i = 0; i < adjustedCount; i++) {

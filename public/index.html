@@ -2,19 +2,143 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/sjfavicon.png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Sayeeda Jabri - Cofounder of Hyderabad Hustlers, IMF Fellow at EdVenture Park" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <meta name="color-scheme" content="dark" />
+
+    <!-- Primary SEO -->
+    <title>Sayeeda Jabri — Co-founder, Hyderabad Hustlers | IMF Fellow at EdVenture Park</title>
+    <meta name="description" content="Sayeeda Jabri is the Co-founder of Hyderabad Hustlers and an Incubation Manager Fellow at EdVenture Park, spotlighting Hyderabad's entrepreneurs through podcasts, community, and storytelling." />
+    <meta name="keywords" content="Sayeeda Jabri, Hyderabad Hustlers, EdVenture Park, IMF Fellow, Incubation Manager Fellow, Hyderabad entrepreneurs, podcast host, co-founder, startup community, women in entrepreneurship, India startup ecosystem" />
+    <meta name="author" content="Sayeeda Jabri" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://sayeedajabri.com/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:site_name" content="Sayeeda Jabri" />
+    <meta property="og:title" content="Sayeeda Jabri — Co-founder, Hyderabad Hustlers | IMF Fellow at EdVenture Park" />
+    <meta property="og:description" content="Co-founder of Hyderabad Hustlers and Incubation Manager Fellow at EdVenture Park. Spotlighting Hyderabad's entrepreneurs through podcasts, community, and storytelling." />
+    <meta property="og:image" content="https://sayeedajabri.com/sayeeda.webp" />
+    <meta property="og:image:type" content="image/webp" />
+    <meta property="og:image:alt" content="Portrait of Sayeeda Jabri" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://sayeedajabri.com/" />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="profile:first_name" content="Sayeeda" />
+    <meta property="profile:last_name" content="Jabri" />
+    <meta property="profile:gender" content="female" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Sayeeda_Jabri" />
+    <meta name="twitter:creator" content="@Sayeeda_Jabri" />
+    <meta name="twitter:title" content="Sayeeda Jabri — Co-founder, Hyderabad Hustlers" />
+    <meta name="twitter:description" content="Co-founder of Hyderabad Hustlers and IMF Fellow at EdVenture Park. Spotlighting Hyderabad's entrepreneurs." />
+    <meta name="twitter:image" content="https://sayeedajabri.com/sayeeda.webp" />
+    <meta name="twitter:image:alt" content="Portrait of Sayeeda Jabri" />
+
+    <!-- Icons & PWA -->
+    <link rel="icon" type="image/webp" href="%PUBLIC_URL%/sjfavicon.webp" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/sjfavicon.webp" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <title>Sayeeda Jabri</title>
+
+    <!-- Performance: preconnect + preload critical hero image -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://img.youtube.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.youtube.com" />
+    <link rel="preload" as="image" type="image/webp" href="%PUBLIC_URL%/sayeeda.webp" fetchpriority="high" />
+
+    <!-- Fonts: font-display swap to prevent FOIT, reduced weight count -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Dancing+Script:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data: Person schema for rich results -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sayeeda Jabri",
+        "givenName": "Sayeeda",
+        "familyName": "Jabri",
+        "url": "https://sayeedajabri.com/",
+        "image": "https://sayeedajabri.com/sayeeda.webp",
+        "jobTitle": "Co-founder & COO, Hyderabad Hustlers; Incubation Manager Fellow, EdVenture Park",
+        "description": "Co-founder of Hyderabad Hustlers and Incubation Manager Fellow at EdVenture Park, spotlighting Hyderabad's entrepreneurs through podcasts and community building.",
+        "gender": "Female",
+        "nationality": "Indian",
+        "worksFor": [
+          {
+            "@type": "Organization",
+            "name": "Hyderabad Hustlers",
+            "url": "https://www.instagram.com/hyderabad_hustlers/"
+          },
+          {
+            "@type": "Organization",
+            "name": "EdVenture Park"
+          }
+        ],
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Sultan Uloom College"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/in/sayeedajabri/",
+          "https://www.instagram.com/sayeeda_jabri",
+          "https://x.com/Sayeeda_Jabri",
+          "https://www.youtube.com/@Hyderabad_Hustlers"
+        ],
+        "knowsAbout": [
+          "Entrepreneurship",
+          "Startup Incubation",
+          "Podcast Hosting",
+          "Community Building",
+          "Law",
+          "Content Strategy"
+        ]
+      }
+    </script>
+
+    <!-- Structured Data: WebSite schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Sayeeda Jabri",
+        "url": "https://sayeedajabri.com/",
+        "description": "Portfolio of Sayeeda Jabri — Co-founder of Hyderabad Hustlers and IMF Fellow at EdVenture Park.",
+        "inLanguage": "en",
+        "author": {
+          "@type": "Person",
+          "name": "Sayeeda Jabri"
+        }
+      }
+    </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="padding: 2rem; color: #fff; background: #000; font-family: sans-serif;">
+        <h1>Sayeeda Jabri</h1>
+        <p>
+          Co-founder of <strong>Hyderabad Hustlers</strong> and Incubation Manager Fellow at
+          <strong>EdVenture Park</strong>. Spotlighting Hyderabad's entrepreneurs through podcasts and
+          community building.
+        </p>
+        <p>
+          This website requires JavaScript to be enabled for the full experience. You can still reach
+          Sayeeda via
+          <a href="https://www.linkedin.com/in/sayeedajabri/" style="color: #febd59;">LinkedIn</a>,
+          <a href="https://www.instagram.com/sayeeda_jabri" style="color: #febd59;">Instagram</a>, or
+          <a href="mailto:sayeedajabri2074@gmail.com" style="color: #febd59;">email</a>.
+        </p>
+      </div>
+    </noscript>
     <div id="root"></div>
   </body>
-</html> 
+</html>

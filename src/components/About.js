@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import ScrollReveal from './ScrollReveal';
@@ -87,7 +87,7 @@ const About = () => {
                 blurStrength={8}
                 highlightWords={["Hyderabad Hustlers"]}
               >
-                I co-founded Hyderabad Hustlers alongside Shoaib Khan with the idea of creating a space where real stories, especially from underrated and emerging founders, could be celebrated. I've had the pleasure of hosting some amazing podcast conversations — particularly with women — and behind the scenes, I've been actively involved in building connections with founders, brainstorming content ideas, and helping shape what the Hustlers community stands for today.
+                I co-founded Hyderabad Hustlers alongside Shoaib Khan with the idea of creating a space where real stories, especially from underrated and emerging founders, could be celebrated. I've had the pleasure of hosting some amazing podcast conversations, particularly with women. Behind the scenes, I've been actively involved in building connections with founders, brainstorming content ideas, and helping shape what the Hustlers community stands for today.
               </ScrollReveal>
 
               <ScrollReveal
@@ -107,7 +107,7 @@ const About = () => {
                 blurStrength={8}
                 highlightWords={["Law degree"]}
               >
-                Currently, I'm pursuing my Law degree at Sultan Uloom College, which helps me bring a different perspective to the startup and content worlds I move in. For me, it's all about bridging creativity, community, and purpose — and making space for those who need it most.
+                Currently, I'm pursuing my Law degree at Sultan Uloom College, which helps me bring a different perspective to the startup and content worlds I move in. For me, it's all about bridging creativity, community, and purpose, while making space for those who need it most.
               </ScrollReveal>
             </motion.div>
           </motion.div>

@@ -15,8 +15,8 @@ const ScrollReveal = ({
   blurStrength = 4,
   containerClassName = "",
   textClassName = "",
-  rotationEnd = "bottom bottom",
-  wordAnimationEnd = "bottom bottom",
+  rotationEnd = "top 40%",
+  wordAnimationEnd = "top 35%",
   highlightWords = []
 }) => {
   const containerRef = useRef(null);
@@ -78,14 +78,14 @@ const ScrollReveal = ({
       el,
       { transformOrigin: '0% 50%', rotate: baseRotation },
       {
-        ease: 'none',
+        ease: 'power2.out',
         rotate: 0,
         scrollTrigger: {
           trigger: el,
           scroller,
-          start: 'top bottom',
+          start: 'top 90%',
           end: rotationEnd,
-          scrub: true,
+          scrub: 0.8,
         },
       }
     );
@@ -94,17 +94,17 @@ const ScrollReveal = ({
 
     gsap.fromTo(
       wordElements,
-      { opacity: baseOpacity, willChange: 'opacity' },
+      { opacity: baseOpacity },
       {
-        ease: 'none',
+        ease: 'power2.out',
         opacity: 1,
-        stagger: 0.05,
+        stagger: 0.08,
         scrollTrigger: {
           trigger: el,
           scroller,
-          start: 'top bottom-=20%',
+          start: 'top 85%',
           end: wordAnimationEnd,
-          scrub: true,
+          scrub: 0.8,
         },
       }
     );
@@ -114,15 +114,15 @@ const ScrollReveal = ({
         wordElements,
         { filter: `blur(${blurStrength}px)` },
         {
-          ease: 'none',
+          ease: 'power2.out',
           filter: 'blur(0px)',
-          stagger: 0.05,
+          stagger: 0.08,
           scrollTrigger: {
             trigger: el,
             scroller,
-            start: 'top bottom-=20%',
+            start: 'top 85%',
             end: wordAnimationEnd,
-            scrub: true,
+            scrub: 0.8,
           },
         }
       );

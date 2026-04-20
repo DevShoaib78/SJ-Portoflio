@@ -33,11 +33,6 @@ const Media = () => {
     });
   };
 
-  const openYouTubeVideo = (url, e) => {
-    e.stopPropagation();
-    window.open(url, '_blank', 'noopener,noreferrer');
-  };
-
   // Mouse tracking for spotlight effect
   const handleMouseMove = (e) => {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -229,7 +224,8 @@ const Media = () => {
             {/* ...copy the same content as in the motion.div below, but as plain divs and no animation logic... */}
             <div className="section-header">
               <h2 className="media-title">Media & <span className="title-highlight">Content</span></h2>
-              <p>Sharing knowledge and building connections through various media platforms</p>
+              <div className="section-line"></div>
+              <p>Amplifying Hyderabad's entrepreneurs through podcasts, reels, and conversations on Hyderabad Hustlers</p>
             </div>
             <div className="content-section">
               <h3 className="content-section-title">🎙️ <span className="youtube-red">YouTube</span> Videos</h3>
@@ -263,7 +259,9 @@ const Media = () => {
                         >
                           <img
                             src={imageFallbacks[item.id] || item.thumbnail}
-                            alt={`${item.title} thumbnail`}
+                            alt={`${item.title} — YouTube video thumbnail`}
+                            width="480"
+                            height="270"
                             onError={() => item.fallbackThumbnail && handleImageError(item.id, item.fallbackThumbnail)}
                             loading="lazy"
                             decoding="async"
@@ -285,9 +283,11 @@ const Media = () => {
                   style={{ cursor: 'pointer' }}
                 >
                   <img
-                    src="/hhinsta.png"
+                    src="/hhinsta.webp"
                     alt="Follow Hyderabad Hustlers on Instagram"
                     className="instagram-image"
+                    width="400"
+                    height="400"
                     loading="lazy"
                     decoding="async"
                   />
@@ -326,16 +326,17 @@ const Media = () => {
             animate={inView ? "visible" : "hidden"}
           >
             <motion.div className="section-header" variants={itemVariants}>
-              <motion.h2 
+              <motion.h2
                 className="media-title"
                 variants={itemVariants}
               >
                 Media & <span className="title-highlight">Content</span>
               </motion.h2>
+              <motion.div className="section-line" variants={itemVariants}></motion.div>
               <motion.p
                 variants={itemVariants}
               >
-                Sharing knowledge and building connections through various media platforms
+                Amplifying Hyderabad's entrepreneurs through podcasts, reels, and conversations on Hyderabad Hustlers
               </motion.p>
             </motion.div>
 
@@ -437,9 +438,11 @@ const Media = () => {
                   style={{ cursor: 'pointer' }}
                 >
                   <img
-                    src="/hhinsta.png"
+                    src="/hhinsta.webp"
                     alt="Follow Hyderabad Hustlers on Instagram"
                     className="instagram-image"
+                    width="400"
+                    height="400"
                     loading="lazy"
                     decoding="async"
                   />
