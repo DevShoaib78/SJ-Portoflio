@@ -1,0 +1,64 @@
+.scroll-reveal {
+  margin: 20px 0;
+}
+
+.scroll-reveal-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  font-weight: 400;
+  color: var(--text-white);
+  margin-bottom: 2rem;
+}
+
+/* Special styling for the intro paragraph */
+.scroll-reveal-text.about-intro {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: italic;
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 4px solid var(--primary-gold);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.word {
+  display: inline-block;
+  will-change: transform, opacity;
+  transition: all 0.3s ease;
+}
+
+/* Highlighted words styling */
+.highlight-word {
+  color: #febd59 !important;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(254, 189, 89, 0.3);
+}
+
+/* Responsive adjustments to match About.css */
+@media (max-width: 768px) {
+  .scroll-reveal-text {
+    font-size: 1rem;
+  }
+  
+  .scroll-reveal-text.about-intro {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    border-left-width: 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-reveal-text.about-intro {
+    font-size: 1.1rem;
+    padding-left: 0.8rem;
+  }
+  
+  .scroll-reveal {
+    margin: 15px 0;
+  }
+  
+  .scroll-reveal-text {
+    margin-bottom: 1.5rem;
+  }
+} 

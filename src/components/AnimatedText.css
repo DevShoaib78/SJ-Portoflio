@@ -1,0 +1,49 @@
+.animated-text {
+  display: inline-block;
+  position: relative;
+}
+
+.animated-text .word {
+  display: inline-block;
+  position: relative;
+}
+
+.animated-text .letter {
+  display: inline-block;
+  position: relative;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #febd59 0%, #e6a548 50%, #febd59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease-in-out infinite;
+}
+
+.cursor {
+  display: inline-block;
+  background: #febd59;
+  width: 2px;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+} 

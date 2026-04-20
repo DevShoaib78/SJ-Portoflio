@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-black: #000000;
+  --primary-gold: #febd59;
+  --text-white: #ffffff;
+  --text-gray: #888888;
+  --text-light-gray: #cccccc;
+  --gradient-gold: linear-gradient(135deg, #febd59 0%, #ffd700 100%);
+  --font-primary: 'Inter', sans-serif;
+  --font-cursive: 'Dancing Script', cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--primary-black);
+  color: var(--text-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: var(--text-light-gray);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Section spacing */
+.section {
+  padding: 4rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--gradient-gold);
+  color: var(--primary-black);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(254, 189, 89, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary-gold);
+  border: 2px solid var(--primary-gold);
+}
+
+.btn-outline:hover {
+  background: var(--primary-gold);
+  color: var(--primary-black);
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.text-gold {
+  color: var(--primary-gold);
+  text-shadow: 0 0 8px rgba(254, 189, 89, 0.4);
+  animation: subtleGlowPulse 3s ease-in-out infinite alternate;
+  animation-play-state: paused; /* Default paused for performance */
+}
+
+.text-gold.in-view {
+  animation-play-state: running; /* Only animate when in view */
+}
+
+@keyframes subtleGlowPulse {
+  0% {
+    text-shadow: 0 0 8px rgba(254, 189, 89, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 12px rgba(254, 189, 89, 0.6), 0 0 20px rgba(254, 189, 89, 0.2);
+  }
+}
+
+.mb-2 {
+  margin-bottom: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 2rem;
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .section {
+    padding: 3rem 0;
+    min-height: auto;
+  }
+  
+  .btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .section {
+    padding: 2rem 0;
+  }
+} 
