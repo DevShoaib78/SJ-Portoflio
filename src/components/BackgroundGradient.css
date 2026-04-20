@@ -1,0 +1,63 @@
+/* Background Gradient Component */
+.background-gradient-container {
+  position: relative;
+  padding: 4px;
+  border-radius: 24px;
+  background: transparent;
+}
+
+.background-gradient-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  z-index: 1;
+  opacity: 0.6;
+  filter: blur(12px);
+  transition: opacity 0.5s ease;
+  will-change: transform;
+  background: 
+    radial-gradient(circle farthest-side at 0% 100%, #00ccb1, transparent),
+    radial-gradient(circle farthest-side at 100% 0%, #7b61ff, transparent),
+    radial-gradient(circle farthest-side at 100% 100%, #ffc414, transparent),
+    radial-gradient(circle farthest-side at 0% 0%, #1ca0fb, #141316);
+}
+
+.background-gradient-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 24px;
+  z-index: 1;
+  will-change: transform;
+  background: 
+    radial-gradient(circle farthest-side at 0% 100%, #00ccb1, transparent),
+    radial-gradient(circle farthest-side at 100% 0%, #7b61ff, transparent),
+    radial-gradient(circle farthest-side at 100% 100%, #ffc414, transparent),
+    radial-gradient(circle farthest-side at 0% 0%, #1ca0fb, #141316);
+}
+
+.background-gradient-content {
+  position: relative;
+  z-index: 10;
+  border-radius: 20px;
+  background: inherit;
+}
+
+.background-gradient-container:hover .background-gradient-blur {
+  opacity: 1;
+}
+
+/* Custom gradients for golden theme - using website's color palette */
+.background-gradient-container.golden .background-gradient-blur,
+.background-gradient-container.golden .background-gradient-main {
+  background: 
+    radial-gradient(circle farthest-side at 0% 100%, rgba(78, 31, 0, 0.8), transparent),
+    radial-gradient(circle farthest-side at 100% 0%, rgba(116, 81, 45, 0.6), transparent),
+    radial-gradient(circle farthest-side at 100% 100%, rgba(254, 186, 23, 0.7), transparent),
+    radial-gradient(circle farthest-side at 0% 0%, rgba(248, 244, 225, 0.3), rgba(20, 19, 22, 0.8));
+} 

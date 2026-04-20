@@ -1,0 +1,27 @@
+.App {
+  min-height: 100vh;
+  background-color: var(--primary-black);
+}
+
+/* Smooth scrolling sections */
+main {
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gold);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6a548;
+} 

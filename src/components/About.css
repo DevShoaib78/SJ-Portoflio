@@ -1,0 +1,222 @@
+.about {
+  position: relative;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 70%, rgba(254, 189, 89, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.about-content {
+  position: relative;
+  z-index: 2;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-header h2 {
+  margin-bottom: 1rem;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-white);
+  margin-bottom: 1rem;
+  font-family: var(--font-primary);
+  display: block;
+  visibility: visible;
+  animation: subtleGlow 3s ease-in-out infinite alternate;
+  text-shadow: 0 0 10px rgba(254, 189, 89, 0.3);
+}
+
+.title-highlight {
+  color: #febd59;
+  text-shadow: 0 0 8px rgba(254, 189, 89, 0.4);
+  animation: subtleGlowPulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes subtleGlowPulse {
+  0% {
+    text-shadow: 0 0 8px rgba(254, 189, 89, 0.4);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(254, 189, 89, 0.7), 0 0 25px rgba(254, 189, 89, 0.3);
+  }
+}
+
+@keyframes subtleGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(254, 189, 89, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(254, 189, 89, 0.5);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(254, 189, 89, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(254, 189, 89, 0.8);
+  }
+}
+
+.section-line {
+  width: 80px;
+  height: 3px;
+  background: var(--gradient-gold);
+  margin: 0 auto;
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+.about-main {
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  width: 100%;
+}
+
+.about-text p {
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.animated-paragraph {
+  display: block;
+  line-height: 1.8;
+}
+
+.word {
+  display: inline;
+  will-change: transform, opacity;
+  transition: all 0.3s ease;
+}
+
+.about-intro {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--text-white);
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 4px solid var(--primary-gold);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* Gold highlighting for specific terms within animated text */
+.about-text .word[data-highlight="true"] {
+  color: #febd59;
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(254, 189, 89, 0.3);
+}
+
+.highlight-text {
+  color: var(--primary-gold);
+  font-weight: 600;
+  text-shadow: 0 0 5px rgba(254, 189, 89, 0.3);
+}
+
+/* Simple title styling - removed ScrollFloat dependencies */
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .about-main {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .about-title {
+    font-size: 2.5rem;
+  }
+  
+  @keyframes subtleGlow {
+    0% {
+      text-shadow: 0 0 8px rgba(254, 189, 89, 0.2);
+    }
+    100% {
+      text-shadow: 0 0 15px rgba(254, 189, 89, 0.4);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .about-text {
+    font-size: 1rem;
+  }
+  
+  .about-intro {
+    font-size: 1.2rem;
+    padding-left: 1rem;
+    border-left-width: 3px;
+  }
+  
+  .about-text p {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+  
+  .about-title {
+    font-size: 1.75rem;
+  }
+  
+  .about-intro {
+    font-size: 1.1rem;
+    padding-left: 0.8rem;
+  }
+  
+  .about-text p {
+    margin-bottom: 1.25rem;
+  }
+  
+  /* Reduced glow effects on mobile for performance */
+  @keyframes subtleGlow {
+    0% {
+      text-shadow: 0 0 5px rgba(254, 189, 89, 0.2);
+    }
+    100% {
+      text-shadow: 0 0 10px rgba(254, 189, 89, 0.3);
+    }
+  }
+  
+  @keyframes pulseGlow {
+    0% {
+      text-shadow: 0 0 3px rgba(254, 189, 89, 0.4);
+    }
+    100% {
+      text-shadow: 0 0 8px rgba(254, 189, 89, 0.6);
+    }
+  }
+} 
