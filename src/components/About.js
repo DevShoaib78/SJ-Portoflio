@@ -109,6 +109,16 @@ const About = () => {
               >
                 Currently, I'm pursuing my Law degree at Sultan Uloom College, which helps me bring a different perspective to the startup and content worlds I move in. For me, it's all about bridging creativity, community, and purpose, while making space for those who need it most.
               </ScrollReveal>
+
+              <motion.div
+                className="about-signature"
+                initial={{ opacity: 0, y: 10 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                aria-hidden="true"
+              >
+                — Sayeeda
+              </motion.div>
             </motion.div>
           </motion.div>
         </motion.div>

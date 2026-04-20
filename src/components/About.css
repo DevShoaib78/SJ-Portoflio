@@ -75,6 +75,29 @@
 
 /* .section-line is defined globally in src/index.css */
 
+/* Cursive "— Sayeeda" sign-off. Uses the already-loaded Dancing Script font.
+   Right-aligned, like a handwritten signature at the end of a letter. */
+.about-signature {
+  display: block;
+  margin-top: 2.25rem;
+  padding-right: 0.5rem;
+  text-align: right;
+  font-family: var(--font-cursive);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 600;
+  color: var(--primary-gold);
+  letter-spacing: 0.02em;
+  text-shadow: 0 0 12px rgba(254, 189, 89, 0.3);
+  line-height: 1;
+}
+
+@media (max-width: 768px) {
+  .about-signature {
+    margin-top: 1.75rem;
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+}
+
 .about-main {
   display: flex;
   justify-content: center;

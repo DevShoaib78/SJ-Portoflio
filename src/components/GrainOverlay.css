@@ -1,0 +1,23 @@
+.grain-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain-overlay {
+    opacity: 0.025;
+  }
+}
+
+/* Slightly stronger on desktop where big flat dark areas feel plasticky;
+   dial back on mobile where retina density already breaks it up. */
+@media (max-width: 768px) {
+  .grain-overlay {
+    opacity: 0.02;
+  }
+}

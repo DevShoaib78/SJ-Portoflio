@@ -3,25 +3,22 @@
   background-color: var(--primary-black);
 }
 
-/* Smooth scrolling sections */
 main {
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+/* Native scrollbar hidden — ScrollProgress bar at the top of the viewport
+   serves as the scroll indicator. Saves horizontal real estate. */
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* legacy Edge/IE */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
 ::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--primary-black);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary-gold);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #e6a548;
+  width: 0;
+  height: 0;
+  display: none;
 } 

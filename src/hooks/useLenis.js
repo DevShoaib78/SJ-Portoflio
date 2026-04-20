@@ -5,6 +5,24 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+let lenisInstance = null;
+
+/**
+ * Scroll to a section anchor, using Lenis when active and falling back
+ * to native smooth-scroll on touch / reduced-motion environments.
+ */
+export function scrollToSection(target, options = {}) {
+  const element =
+    typeof target === 'string' ? document.getElementById(target.replace(/^#/, '')) : target;
+  if (!element) return;
+
+  if (lenisInstance) {
+    lenisInstance.scrollTo(element, { offset: 0, duration: 1.2, ...options });
+  } else if (typeof element.scrollIntoView === 'function') {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
 /**
  * Initializes Lenis smooth scroll and keeps GSAP ScrollTrigger in sync.
  * - Disabled on touch devices (kept native inertia — feels better on mobile)
@@ -25,8 +43,8 @@ export default function useLenis() {
       touchMultiplier: 1.2,
       infinite: false,
     });
+    lenisInstance = lenis;
 
-    // Keep ScrollTrigger-driven animations (About section text reveals) in sync
     const scrollHandler = () => ScrollTrigger.update();
     lenis.on('scroll', scrollHandler);
 
@@ -36,7 +54,6 @@ export default function useLenis() {
     gsap.ticker.add(rafCallback);
     gsap.ticker.lagSmoothing(0);
 
-    // Pause smooth scroll while the page is hidden (saves battery)
     const handleVisibility = () => {
       if (document.hidden) {
         lenis.stop();
@@ -51,6 +68,7 @@ export default function useLenis() {
       gsap.ticker.remove(rafCallback);
       lenis.off('scroll', scrollHandler);
       lenis.destroy();
+      if (lenisInstance === lenis) lenisInstance = null;
     };
   }, []);
 }

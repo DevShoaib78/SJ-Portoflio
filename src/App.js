@@ -3,13 +3,18 @@ import { motion, AnimatePresence } from 'framer-motion';
 import SplashScreen from './components/SplashScreen';
 import Hero from './components/Hero';
 import ErrorBoundary from './components/ErrorBoundary';
+import ScrollProgress from './components/ScrollProgress';
+import GrainOverlay from './components/GrainOverlay';
+import SectionNav from './components/SectionNav';
 import { useAnimationControl } from './components/AnimationController';
 import useLenis from './hooks/useLenis';
 import './App.css';
 
 // Below-the-fold sections are code-split so the initial JS bundle stays small.
 const About = lazy(() => import('./components/About'));
+const ImpactStats = lazy(() => import('./components/ImpactStats'));
 const Experience = lazy(() => import('./components/Experience'));
+const QuoteCard = lazy(() => import('./components/QuoteCard'));
 const Media = lazy(() => import('./components/Media'));
 const Contact = lazy(() => import('./components/Contact'));
 
@@ -37,7 +42,6 @@ function App() {
       setTimeout(() => setShowSplash(false), wait);
     };
 
-    // Dismiss as soon as the page is fully loaded, but never past MAX_SPLASH_MS.
     if (document.readyState === 'complete') {
       dismiss();
     } else {
@@ -54,24 +58,33 @@ function App() {
   return (
     <ErrorBoundary>
       <div className="App">
+        {/* Always-on decorative / chrome layers */}
+        <GrainOverlay />
+        <ScrollProgress />
+
         <AnimatePresence>
           {showSplash && <SplashScreen key="splash" />}
         </AnimatePresence>
 
         {!showSplash && (
-          <motion.main
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-          >
-            <Hero />
-            <Suspense fallback={<div style={{ minHeight: '40vh' }} aria-hidden="true" />}>
-              <About />
-              <Experience />
-              <Media />
-              <Contact />
-            </Suspense>
-          </motion.main>
+          <>
+            <SectionNav />
+            <motion.main
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Hero />
+              <Suspense fallback={<div style={{ minHeight: '40vh' }} aria-hidden="true" />}>
+                <About />
+                <ImpactStats />
+                <Experience />
+                <QuoteCard />
+                <Media />
+                <Contact />
+              </Suspense>
+            </motion.main>
+          </>
         )}
       </div>
     </ErrorBoundary>

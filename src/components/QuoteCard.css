@@ -1,0 +1,98 @@
+.quote-card-section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.quote-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 2.5rem;
+  position: relative;
+  text-align: center;
+  background: rgba(254, 189, 89, 0.03);
+  border: 1px solid rgba(254, 189, 89, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.quote-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--primary-gold), transparent);
+  opacity: 0.7;
+}
+
+.quote-mark {
+  width: 44px;
+  height: 44px;
+  color: var(--primary-gold);
+  opacity: 0.55;
+  margin-bottom: 1.25rem;
+  filter: drop-shadow(0 0 10px rgba(254, 189, 89, 0.35));
+}
+
+.quote-text {
+  font-size: clamp(1.15rem, 2.2vw, 1.5rem);
+  line-height: 1.55;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.005em;
+  font-style: italic;
+  margin: 0 0 1.75rem;
+  max-width: 60ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.quote-attribution {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-cursive);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--primary-gold);
+  text-shadow: 0 0 10px rgba(254, 189, 89, 0.3);
+}
+
+.quote-attribution-line {
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--primary-gold);
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .quote-card-section {
+    padding: 3.5rem 0;
+  }
+
+  .quote-card {
+    padding: 2.25rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .quote-mark {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quote-card-section {
+    padding: 2.75rem 0;
+  }
+
+  .quote-card {
+    padding: 2rem 1.25rem;
+  }
+
+  .quote-attribution {
+    font-size: 1.2rem;
+  }
+}
