@@ -13,3 +13,11 @@ pnpm-debug.log*
 # Local scratch folder (screenshots, notes, etc.)
 Random Folder/
 
+# Lighthouse audit exports (local perf artifacts, not part of the codebase)
+lighthouse*.pdf
+lighthouse*.html
+lighthouse*.json
+sayeedajabri.com-*.html
+sayeedajabri.com-*.json
+sayeedajabri.com-*.pdf
+
